@@ -5,12 +5,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
-
 public class GeografijaDAO {
     private static GeografijaDAO instance;
     private static Connection connection;
     private String databaseURL = "jdbc:sqlite:baza.db";
+
 
     private GeografijaDAO() {
         boolean init = !databaseExists();
@@ -24,6 +23,10 @@ public class GeografijaDAO {
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static Connection getConnection() {
+        return connection;
     }
 
     private void initializeDatabase() {
@@ -230,4 +233,6 @@ public class GeografijaDAO {
             System.out.println(e.getMessage());
         }
     }
+
+
 }

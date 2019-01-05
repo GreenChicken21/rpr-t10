@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GradoviReport extends JFrame {
+
+    public void saveAs(String format){
+
+    }
     public void showReport(Connection conn) throws JRException {
         String reportSrcFile = getClass().getResource("/reports/gradovi.jrxml").getFile();
         String reportsDir = getClass().getResource("/reports/").getFile();

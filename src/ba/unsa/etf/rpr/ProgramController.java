@@ -1,17 +1,15 @@
 package ba.unsa.etf.rpr;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.JRException;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Locale;
@@ -21,9 +19,10 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
 
 public class ProgramController implements Initializable {
     public BorderPane mainPane;
-
+    public ListView lista;
+    private GeografijaDAO baza ;
     public ProgramController() {
-
+        baza = GeografijaDAO.getInstance();
     }
 
     @Override
@@ -64,4 +63,14 @@ public class ProgramController implements Initializable {
     public void setFr(ActionEvent actionEvent) {
         selectLanguage(new Locale("fr","FR"));
     }
+    public void print(ActionEvent actionEvent){
+        GradoviReport report = new GradoviReport();
+        try {
+            report.showReport(GeografijaDAO.getConnection());
+        } catch (JRException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
