@@ -39,15 +39,15 @@ public class GeografijaDAO {
             System.out.println(e.getMessage());
         }
 
-        Grad paris = new Grad(-1, "Pariz", 2206488, null);
-        Grad london = new Grad(-1, "London", 8825000, null);
-        Grad betsch = new Grad(-1, "Beč", 1899055, null);
-        Grad manch = new Grad(-1, "Manchester", 545500, null);
-        Grad graz = new Grad(-1, "Graz", 280200, null);
+        Grad paris = new Grad(1234, "Pariz", 2206488, null);
+        Grad london = new Grad(1243, "London", 8825000, null);
+        Grad betsch = new Grad(4321, "Beč", 1899055, null);
+        Grad manch = new Grad(4312, "Manchester", 545500, null);
+        Grad graz = new Grad(2314, "Graz", 280200, null);
 
-        Drzava fran = new Drzava(-1, "Francuska", paris);
-        Drzava vBrit = new Drzava(-1, "Velika Britanija", london);
-        Drzava aut = new Drzava(-1, "Austrija", betsch);
+        Drzava fran = new Drzava(123, "Francuska", paris);
+        Drzava vBrit = new Drzava(132, "Velika Britanija", london);
+        Drzava aut = new Drzava(321, "Austrija", betsch);
 
         paris.setDrzava(fran);
         london.setDrzava(vBrit);
